@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  assetStore: {
+    public: "/var/opt/archie/enhabsor/assetstore/public",
+    private: "/var/opt/archie/enhabsor/assetstore/private"  
+ },
+ locationOrigin: "http://localhost",
+ version: "2.0.0-SNAPSHOT"
 };
 
 /*
