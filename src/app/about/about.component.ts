@@ -8,14 +8,16 @@ import { environment } from '../../environments/environment';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  uiVersion: string = "?";
   coreVersion: String = "?";
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.uiVersion = environment.version;
     this.getCoreVersion();
+  }
+
+  getEnvironment() {
+    return environment.production ? "production" : "development";
   }
 
   getUiVersion() {

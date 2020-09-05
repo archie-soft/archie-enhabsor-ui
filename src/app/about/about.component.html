@@ -1,14 +1,26 @@
 <div>
+    <h1>
+        Archie En-Habsor
+    </h1>
     <p>
-        Archie En Habsor UI version:
+        Environment:
         <strong>
-            {{ uiVersion }}
+            {{ getEnvironment() }}
         </strong>
     </p>
-    <p>
-        Archie En Habsor Core version:
-        <strong>
-            {{ coreVersion }}
-        </strong>
-    </p>
+    <p>Version</p>
+    <ul>
+        <li>
+            UI:
+            <strong>
+                {{ getUiVersion() }}
+            </strong>
+        </li>
+        <li>
+            Core:
+            <strong>
+                {{ coreVersion }}
+            </strong>
+        </li>
+    </ul>
 </div>
