@@ -13,7 +13,7 @@ export class ToolbarComponent implements OnInit {
   }
 
   getUserInfo(): string {
-    return "ישראל ישראלי";
+    return "";
   }
 
 }

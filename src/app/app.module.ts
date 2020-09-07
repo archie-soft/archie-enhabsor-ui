@@ -1,13 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
@@ -23,6 +17,11 @@ import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatTableModule } from "@angular/material/table";
 import { MatDialogModule } from "@angular/material/dialog";
 
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { AboutComponent } from './about/about.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
@@ -33,22 +32,22 @@ import { MatDialogModule } from "@angular/material/dialog";
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
     MatListModule,
+    MatIconModule,
     MatCardModule,
+    MatNativeDateModule,
+    MatTooltipModule,
+    MatInputModule,
+    MatButtonModule,
     MatSelectModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatNativeDateModule,
     MatTableModule,
-    MatTooltipModule,
-    MatDialogModule
-
+    MatDialogModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
