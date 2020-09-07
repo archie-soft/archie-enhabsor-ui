@@ -22,13 +22,15 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     WelcomeComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
