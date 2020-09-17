@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "archie-enhabsor-ui"
+  "defaultProject": "archie-enhabsor-ui",
+  "cli": {
+    "analytics": "78ab5dbb-f364-4f6d-bf12-f159aaf1f58a"
+  }
 }

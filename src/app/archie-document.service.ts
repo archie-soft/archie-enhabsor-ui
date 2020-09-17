@@ -34,6 +34,15 @@ export class ArchieDocumentService {
       .pipe(catchError(this.handleError("getSummary", [])));
   }
 
+  getDcCreators(): Observable<any> {
+    let url =
+      this.docsUrl +
+      "&q=*:*&fl=id&facet=on&facet.field=dcCreator&facet.sort=index&facet.limit=1000000";
+    return this.http
+      .get<any>(url)
+      .pipe(catchError(this.handleError("getCreators", [])));
+  }
+
   getSearchResults(
     searchParams: string,
     start: number,
@@ -43,7 +52,7 @@ export class ArchieDocumentService {
       this.docsUrl +
       "&q.op=AND&" +
       searchParams +
-      "&fl=id,dcTitle,dcDate,dcCreator,dcDescription" +
+      "&fl=id,dcTitle,dcDate,dcCreator,dcDescription,dcFormat,dcAccessRights" +
       "&start=" +
       (start - 1) +
       "&rows=" +
@@ -53,6 +62,14 @@ export class ArchieDocumentService {
       .get<any>(url)
       .pipe(catchError(this.handleError("getSearchResults", [])));
   }
+
+  deleteDocument(id: string): Observable<any> {
+    let url = this.apiUrl + "/docs/delete/" + id;
+    return this.http
+      .delete(url, httpOptions)
+      .pipe(catchError(this.handleError("deleteDocument", [])));
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.

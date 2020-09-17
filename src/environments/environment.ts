@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   assetStore: {
-    public: "/var/opt/archie/enhabsor/assetstore/public",
-    private: "/var/opt/archie/enhabsor/assetstore/private"  
+    public: "http://localhost/assetstore/public",
+    private: "http://localhost/assetstore/private"  
  },
  locationOrigin: "http://localhost",
  version: "2.0.0-SNAPSHOT"

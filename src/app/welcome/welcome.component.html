@@ -1,28 +1,32 @@
-<div fxLayout="row" fxLayoutAlign="center">
-    <img src="/assets/logo.png" alt="logo" />
-    <h1>ברוכים הבאים לארכיון עין-הבשור</h1>
-    <div>
-        <strong>הארכיון מכיל: </strong>
-        <span>{{ getDcTypeCount("text") }} </span>
-        <span>מסמכי טקסט</span>
-        <span> | </span>
-        <span> {{ getDcTypeCount("image") }} </span>
-        <span>תמונות</span>
-        <span> | </span>
-        <span> {{ getDcTypeCount("audio") }} </span>
-        <span>קבצי אודיו</span>
-        <span> | </span>
-        <span> {{ getDcTypeCount("video") }} </span>
-        <span>סרטוני וידאו</span>
-    </div>
-    <mat-form-field class="searchbox">
-        <input #searchBox matInput placeholder="הקלידו מילה או ביטוי לחיפוש, או כוכבית למציאת כל המסמכים."
-            (keyup.enter)="search(searchBox.value)">
-        <mat-icon matSuffix ngOnc>search</mat-icon>
-    </mat-form-field>
-    <div>
-        <button mat-raised-button color="primary" (click)="search(searchBox.value)" class="searchbox">
-            חיפוש
-        </button>
+<div>
+    <div fxLayout="row" fxLayoutAlign="center">
+        <div fxLayout="column">
+            <img src="/assets/logo.png" alt="logo" />
+            <h1>ברוכים הבאים לארכיון עין-הבשור</h1>
+            <div>
+                <strong>הארכיון מכיל: </strong>
+                <span>{{ getDcTypeCount("text") }} </span>
+                <span>מסמכי טקסט</span>
+                <span> | </span>
+                <span> {{ getDcTypeCount("image") }} </span>
+                <span>תמונות</span>
+                <span> | </span>
+                <span> {{ getDcTypeCount("audio") }} </span>
+                <span>קבצי אודיו</span>
+                <span> | </span>
+                <span> {{ getDcTypeCount("video") }} </span>
+                <span>סרטוני וידאו</span>
+                <mat-form-field class="searchbox">
+                    <input #searchBox matInput placeholder="הקלידו מילה או ביטוי לחיפוש, או כוכבית למציאת כל המסמכים."
+                        (keyup.enter)="search(searchBox.value)">
+                    <mat-icon matSuffix ngOnc>search</mat-icon>
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button color="primary" (click)="search(searchBox.value)" class="searchbox">
+                        חיפוש
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
