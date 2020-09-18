@@ -1,4 +1,8 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from "@angular/core";
+import { registerLocaleData } from "@angular/common";
+import localeHeExtra from "@angular/common/locales/extra/he";
+import localeHe from "@angular/common/locales/he";
+
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +29,8 @@ import { AboutComponent } from './about/about.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
+
+registerLocaleData(localeHe, "he", localeHeExtra);
 
 @NgModule({
   declarations: [
@@ -55,7 +61,9 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     MatDialogModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: "he" }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

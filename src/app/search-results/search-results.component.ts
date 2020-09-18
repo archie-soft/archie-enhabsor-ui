@@ -276,6 +276,11 @@ export class SearchResultsComponent implements OnInit {
     return this.storageService.getUrl(element.dcAccessRights, "originals", element.id, element.dcFormat);
   }
 
+  getLocalStoragePermanentText(permanent: boolean) {
+    if (permanent) return "קבוע";
+    return "זמני";
+  }
+
   getPreviewTag(element: ArchieDoc): string {
     switch (element.dcFormat) {
       case "pdf":

@@ -52,7 +52,7 @@ export class ArchieDocumentService {
       this.docsUrl +
       "&q.op=AND&" +
       searchParams +
-      "&fl=id,dcTitle,dcDate,dcCreator,dcDescription,dcFormat,dcAccessRights" +
+      "&fl=id,isadFonds,isadSubFonds,isadSeries,isadFile,dcAccessRights,dcTitle,dcCreator,dcDateStart,dcDateEnd,dcDescription,dcType,dcSource,dcFormat,dcIdentifier,localStoragePermanent,localStorageCabinet,localStorageShelf,localStorageContainer,localTextActionCode" +
       "&start=" +
       (start - 1) +
       "&rows=" +
