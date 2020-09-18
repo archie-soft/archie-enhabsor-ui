@@ -94,18 +94,18 @@
       </div>
       <div fxLayout="row" fxLayoutAlign="start center" *ngFor="let element of dataSource" class="results-row">
         <div fxLayout="column" fxLayoutGap="0.1em" class="results-column">
-          <div fxLayout="row">
+          <div>
             <p class="dcTitle">
               {{ element.dcTitle }}
             </p>
           </div>
-          <div fxLayout="row">
+          <div>
             <span class="labels">יוצרי המסמך: </span>
             <span>
               {{ element.dcCreator }}
             </span>
           </div>
-          <div fxLayout="row">
+          <div>
             <span class="labels">תאריך: </span>
             <span>
               <span class="dcDate">
@@ -117,91 +117,78 @@
               </span>
             </span>
           </div>
-          <div fxLayout="row">
+          <div>
             <span class="labels">סוג: </span>
             <span>
               {{ getDcTypeLabel(element.dcType) }}
             </span>
           </div>
-          <div fxLayout="row">
+          <div>
             <span class="labels">פורמט: </span>
             <span>
               {{ element.dcFormat }}
             </span>
           </div>
-          <div fxLayout="row">
+          <div>
             <span class="labels">סיווג: </span>
             <span>
               {{ element.dcAccessRights }}
             </span>
           </div>
-          <div fxLayout="row">
+          <div>
             <p class="dcDescription">
               {{ element.dcDescription }}
             </p>
           </div>
-          <div fxLayout="row">
-            <span class="labels">חטיבה: </span>
-            <span>
-              {{ element.isadFonds }}
+          <div>
+            <span style="font-weight: bold;">
+              חטיבה:
             </span>
-          </div>
-          <div fxLayout="row">
-            <span class="labels">חטיבת משנה: </span>
-            <span>
-              {{ element.isadSubFonds }}
+            {{ element.isadFonds }}
+            ,
+            <span style="font-weight: bold;">
+              חטיבת משנה:
             </span>
-          </div>
-          <div fxLayout="row">
-            <span class="labels">סדרה: </span>
-            <span>
-              {{ element.isadSeries }}
+            {{ element.isadSubFonds }}
+            ,
+            <span style="font-weight: bold;">
+              סידרה:
             </span>
-          </div>
-          <div fxLayout="row">
-            <span class="labels">תיק: </span>
-            <span>
-              {{ element.isadFile }}
+            {{ element.isadSeries }}
+            ,
+            <span style="font-weight: bold;">
+              תיק:
             </span>
+            {{ element.isadFile }}
           </div>
-          <div fxLayout="row" style="padding-top: 1em;">
-            <span class="labels">מוצא : </span>
+          <div>
+            <span style="font-weight: bold;">מוצא : </span>
             <span>
               {{ element.dcSource }}
             </span>
-          </div>
-          <div fxLayout="row" style="padding-bottom: 1em;">
-            <span class="labels">סימול : </span>
+            <span style="font-weight: bold;">סימול : </span>
             <span>
               {{ element.dcIdentifier }}
             </span>
           </div>
-          <div fxLayout="row"></div>
-          <div fxLayout="row">
-            <span class="labels">מיקום: </span>
+          <div>
+            <span style="font-weight: bold;">מיקום: </span>
             <span>
               {{ getLocalStoragePermanentText(element.localStoragePermanent) }}
             </span>
-          </div>
-          <div fxLayout="row">
-            <span class="labels">ארון : </span>
+            <span style="font-weight: bold;">ארון : </span>
             <span>
               {{ element.localStorageCabinet }}
             </span>
-          </div>
-          <div fxLayout="row">
-            <span class="labels">מדף: </span>
+            <span style="font-weight: bold;">מדף: </span>
             <span>
               {{ element.localStorageShelf }}
             </span>
-          </div>
-          <div fxLayout="row">
-            <span class="labels">מיכל: </span>
+            <span style="font-weight: bold;">מיכל: </span>
             <span>
               {{ element.localStorageContainer }}
             </span>
           </div>
-
           <div fxLayout="row" class="button-row">
             <a href="{{ getDownloadLink(element) }}" *ngIf="element.dcFormat">
               <button mat-icon-button matTooltip="Download">
@@ -220,7 +207,7 @@
         </div>
 
         <div fxLayout="column" class="results-column">
-          <div fxLayout="row" [ngSwitch]="getPreviewTag(element)">
+          <div [ngSwitch]="getPreviewTag(element)">
             <img *ngSwitchCase="'img'" src="{{ getThumbnailLink(element) }}" alt="image not found" class="preview" />
             <audio *ngSwitchCase="'audio'" controls src="{{ getThumbnailLink(element) }}" class="preview"></audio>
             <video *ngSwitchCase="'video'" controls src="{{ getThumbnailLink(element) }}" class="preview"></video>
