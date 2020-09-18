@@ -29,6 +29,10 @@ import { AboutComponent } from './about/about.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import { EditDocumentComponent } from './edit-document/edit-document.component';
+import { ImportFolderComponent } from './import-folder/import-folder.component';
+import { ImportFolderReportComponent } from './import-folder-report/import-folder-report.component';
+import { ImportFileReportComponent } from './import-file-report/import-file-report.component';
 
 registerLocaleData(localeHe, "he", localeHeExtra);
 
@@ -38,7 +42,11 @@ registerLocaleData(localeHe, "he", localeHeExtra);
     AboutComponent,
     WelcomeComponent,
     ToolbarComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    EditDocumentComponent,
+    ImportFolderComponent,
+    ImportFolderReportComponent,
+    ImportFileReportComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,6 @@
 <mat-toolbar color="primary" class="content">
-    <span mat-list-item>
-        שלום
-        <b> {{ getUserInfo() }} </b>
-    </span>
     <a mat-list-item [routerLink]="'/welcome'">בית</a>
+    <a mat-list-item [routerLink]="'/import-folder'">יבוא תיקיה</a>
+    <a mat-list-item [routerLink]="'/import-folder-report'">דוחות</a>
     <a mat-list-item [routerLink]="'/about'">אודות</a>
 </mat-toolbar>
