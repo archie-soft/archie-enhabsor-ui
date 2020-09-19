@@ -24,7 +24,7 @@ export class ArchieDocumentService {
   constructor(private http: HttpClient) {
     this.docsUrl = environment.locationOrigin + "/docs?wt=json&indent=on";
     this.exportUrl = environment.locationOrigin + "/docs?wt=csv";
-    this.apiUrl = environment.locationOrigin + "/api/rest";
+    this.apiUrl = environment.locationOrigin + "/api";
   }
 
   getDcTypes(): Observable<any> {
