@@ -1,1 +1,138 @@
-<p>edit-document works!</p>
+<div *ngIf="doc">
+    <div fxLayout="row" *ngIf="doc.dcFormat">
+        <img src="{{ getThumbnailLink(doc) }}" alt="image not found" />
+    </div>
+    <div fxLayout="row" *ngIf="doc.dcFormat">
+        <p class="preview">
+            קובץ בפורמט
+            {{ doc.dcFormat }}
+        </p>
+    </div>
+    <div fxLayout="row">
+        <mat-form-field class="editTextFields">
+            <mat-label>כותרת</mat-label>
+            <input matInput [(ngModel)]="doc.dcTitle" />
+        </mat-form-field>
+    </div>
+    <div fxLayout="row">
+        <mat-form-field class="editTextFields">
+            <mat-label>יוצרים</mat-label>
+            <input multiple matInput [(ngModel)]="dcCreators" />
+        </mat-form-field>
+    </div>
+    <div fxLayout="row">
+        <mat-form-field>
+            <mat-label>תאריך</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="doc.dcDate" />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div fxLayout="row">
+        <mat-form-field>
+            <mat-label>סוג</mat-label>
+            <mat-select [(value)]="doc.dcType" matTooltip="סוג המסמך או הפריט">
+                <mat-option value="text">טקסט</mat-option>
+                <mat-option value="image">תמונה</mat-option>
+                <mat-option value="audio">צליל</mat-option>
+                <mat-option value="video">סרט</mat-option>
+                <mat-option value="other">אחר</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div fxLayout="row">
+        <mat-form-field>
+            <mat-label>סיווג</mat-label>
+            <mat-select [(value)]="doc.dcAccessRights"
+                matTooltip="ציבורי: לכולם מותר לצפות בקובץ, פרטי: רק לתושבי בארי, סודי: רק למנהלות הארכיון.">
+                <mat-option value="public">ציבורי</mat-option>
+                <mat-option value="private">פרטי</mat-option>
+                <mat-option value="secret">סודי</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div fxLayout="row">
+        <mat-form-field class="editTextFields">
+            <mat-label>תיאור</mat-label>
+            <textarea matInput matTextareaAutosize matAutosizeMinRows="1" matAutosizeMaxRows="10"
+                [(ngModel)]="doc.dcDescription"></textarea>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="editTextFields">
+            <mat-label>חטיבה</mat-label>
+            <input matInput [(ngModel)]="doc.isadFonds" />
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="editTextFields">
+            <mat-label>חטיבת משנה</mat-label>
+            <input matInput [(ngModel)]="doc.isadSubFonds" />
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="editTextFields">
+            <mat-label>סידרה</mat-label>
+            <input matInput [(ngModel)]="doc.isadSeries" />
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="editTextFields">
+            <mat-label>תיק</mat-label>
+            <input matInput [(ngModel)]="doc.isadFile" />
+        </mat-form-field>
+    </div>
+    <div fxLayout="row">
+        <mat-form-field class="editTextFields">
+            <mat-label>מוצא</mat-label>
+            <input matInput [(ngModel)]="doc.dcSource" />
+        </mat-form-field>
+    </div>
+    <div fxLayout="row">
+        <mat-form-field class="editTextFields">
+            <mat-label>סימול</mat-label>
+            <input matInput [(ngModel)]="doc.dcIdentifier" />
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>מיקום</mat-label>
+            <mat-select [(value)]="doc.localStoragePermanent">
+                <mat-option value=true>קבוע</mat-option>
+                <mat-option value=false>זמני</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-checkbox [(ngModel)]="doc.localStoragePermanent">
+            מיקום קבוע
+        </mat-checkbox>
+    </div>
+    <div>
+        <mat-form-field class="editTextFields">
+            <mat-label>ארון</mat-label>
+            <input matInput [(ngModel)]="doc.localStorageCabinet" />
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="editTextFields">
+            <mat-label>מדף</mat-label>
+            <input matInput [(ngModel)]="doc.localStorageShelf" />
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="editTextFields">
+            <mat-label>מיכל</mat-label>
+            <input matInput [(ngModel)]="doc.localStorageContainer" />
+        </mat-form-field>
+    </div>
+    <div fxLayout="row">
+        <button mat-icon-button matTooltip="Save" (click)="saveDocument()">
+            <mat-icon>save</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Cancel" (click)="goBack()">
+            <mat-icon>cancel</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Back" (click)="goBack()">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+    </div>
+</div>
