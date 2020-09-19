@@ -1,4 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
+import { Location } from "@angular/common";
+import { ArchieDocumentService } from "../archie-document.service";
+
+export interface ImportFolder {
+  id: number;
+  folderName: string;
+  importTimeFormatted: string;
+  importDateFormatted: string;
+  fileCount: number;
+}
 
 @Component({
   selector: 'app-import-folder-report',
@@ -7,9 +18,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImportFolderReportComponent implements OnInit {
 
-  constructor() { }
+  importFolders: ImportFolder[];
+  selectedFolder: ImportFolder;
 
-  ngOnInit(): void {
+  constructor(
+    private route: ActivatedRoute,
+    private location: Location,
+    private archieDocumentService: ArchieDocumentService
+  ) { }
+
+  ngOnInit() {
+    this.getImportFolders();
+  }
+
+  getImportFolders(): void {
+    this.archieDocumentService
+      .getImportFoldersReport()
+      .subscribe(
+        (data: ImportFolder[]) => (this.importFolders = data)
+      );
   }
 
 }
