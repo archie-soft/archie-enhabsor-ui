@@ -67,13 +67,18 @@ export class ArchieDocumentService {
   getSearchResults(
     searchParams: string,
     start: number,
-    rows: number
+    rows: number,
+    content: boolean = false
   ): Observable<any> {
+    let fieldList = "id,isadFonds,isadSubFonds,isadSeries,isadFile,dcAccessRights,dcTitle,dcCreator,dcDateStart,dcDateEnd,dcDescription,dcType,dcSource,dcFormat,dcIdentifier,localStoragePermanent,localStorageCabinet,localStorageShelf,localStorageContainer,localTextActionCode";
+    if (content) {
+      fieldList = fieldList + ",content";
+    }
     let url =
       this.docsUrl +
       "&q.op=AND&" +
       searchParams +
-      "&fl=id,isadFonds,isadSubFonds,isadSeries,isadFile,dcAccessRights,dcTitle,dcCreator,dcDateStart,dcDateEnd,dcDescription,dcType,dcSource,dcFormat,dcIdentifier,localStoragePermanent,localStorageCabinet,localStorageShelf,localStorageContainer,localTextActionCode" +
+      "&fl=" + fieldList +
       "&start=" +
       (start - 1) +
       "&rows=" +
