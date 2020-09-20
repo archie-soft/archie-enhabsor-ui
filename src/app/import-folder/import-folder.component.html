@@ -1,6 +1,6 @@
 <div fxLayout="row">
     <mat-form-field>
-        <mat-label>תיקיה</mat-label>
+        <mat-label class="mandatory">תיקיה</mat-label>
         <mat-select [(value)]="importAttributes.folderName" matTooltip="בחרו תיקייה המכילה קבצים שברצונכם לקלוט">
             <mat-option *ngFor="let folder of folders" [value]="folder">
                 {{ folder }}
@@ -10,7 +10,7 @@
 </div>
 <div fxLayout="row">
     <mat-form-field>
-        <mat-label>הוסף שמות קבצים לשדה</mat-label>
+        <mat-label class="mandatory">הוסף שמות קבצים לשדה</mat-label>
         <mat-select [(value)]="importAttributes.addFileNamesTo">
             <mat-option value="do-nothing">
                 אל תוסיף
@@ -26,7 +26,7 @@
 </div>
 <div fxLayout="row">
     <mat-form-field>
-        <mat-label>טיפול בטקסט</mat-label>
+        <mat-label class="mandatory">טיפול בטקסט</mat-label>
         <mat-select [(value)]="importAttributes.textAction" matTooltip="מה לעשות כאשר תוכן המסמך מכיל טקסט?">
             <mat-option value="do-nothing">
                 לא לעשות כלום
@@ -41,28 +41,8 @@
     </mat-form-field>
 </div>
 <div fxLayout="row">
-    <mat-form-field class="editTextFields">
-        <mat-label>כותרת</mat-label>
-        <input matInput [(ngModel)]="importAttributes.dcTitle" />
-    </mat-form-field>
-</div>
-<div fxLayout="row">
-    <mat-form-field class="editTextFields">
-        <mat-label>יוצרים</mat-label>
-        <input matInput [(ngModel)]="dcCreator" matTooltip="שם היוצר, או רשימה של יוצרים, מופרדת באמצעות פסיקים" />
-    </mat-form-field>
-</div>
-<div fxLayout="row">
     <mat-form-field>
-        <mat-label>תאריך</mat-label>
-        <input matInput [matDatepicker]="picker" [(ngModel)]="importAttributes.dcDateStart" />
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-</div>
-<div fxLayout="row">
-    <mat-form-field>
-        <mat-label>סוג</mat-label>
+        <mat-label class="mandatory">סוג</mat-label>
         <mat-select [(value)]="importAttributes.dcType" matTooltip="סוג המסמך או הפריט">
             <mat-option value="text">טקסט</mat-option>
             <mat-option value="image">תמונה</mat-option>
@@ -84,9 +64,88 @@
     </mat-form-field>
 </div>
 <div fxLayout="row">
+    <mat-form-field>
+        <mat-label>תאריך</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="importAttributes.dcDateStart" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+</div>
+<div fxLayout="row">
+    <mat-form-field class="editTextFields">
+        <mat-label>כותרת</mat-label>
+        <input matInput [(ngModel)]="importAttributes.dcTitle" />
+    </mat-form-field>
+</div>
+<div fxLayout="row">
+    <mat-form-field class="editTextFields">
+        <mat-label>יוצרים</mat-label>
+        <input matInput [(ngModel)]="dcCreator" matTooltip="שם היוצר, או רשימה של יוצרים, מופרדת באמצעות פסיקים" />
+    </mat-form-field>
+</div>
+<div fxLayout="row">
     <mat-form-field class="editTextFields">
         <mat-label>תיאור</mat-label>
         <input matInput [(ngModel)]="importAttributes.dcDescription" />
+    </mat-form-field>
+</div>
+<div fxLayout="row">
+    <mat-form-field class="editTextFields">
+        <mat-label>חטיבה</mat-label>
+        <input matInput [(ngModel)]="importAttributes.isadFonds" />
+    </mat-form-field>
+</div>
+<div fxLayout="row">
+    <mat-form-field class="editTextFields">
+        <mat-label>חטיבת משנה</mat-label>
+        <input matInput [(ngModel)]="importAttributes.isadSubFonds" />
+    </mat-form-field>
+</div>
+<div fxLayout="row">
+    <mat-form-field class="editTextFields">
+        <mat-label>סידרה</mat-label>
+        <input matInput [(ngModel)]="importAttributes.isadSeries" />
+    </mat-form-field>
+</div>
+<div fxLayout="row">
+    <mat-form-field class="editTextFields">
+        <mat-label>תיק</mat-label>
+        <input matInput [(ngModel)]="importAttributes.isadFile" />
+    </mat-form-field>
+</div>
+<div fxLayout="row">
+    <mat-form-field class="editTextFields">
+        <mat-label>מוצא</mat-label>
+        <input matInput [(ngModel)]="importAttributes.dcSource" />
+    </mat-form-field>
+</div>
+<div fxLayout="row">
+    <mat-form-field class="editTextFields">
+        <mat-label>סימול</mat-label>
+        <input matInput [(ngModel)]="importAttributes.dcIdentifier" />
+    </mat-form-field>
+</div>
+<div fxLayout="row">
+    <mat-checkbox [(ngModel)]="importAttributes.localStoragePermanent">
+        מיקום קבוע
+    </mat-checkbox>
+</div>
+<div fxLayout="row">
+    <mat-form-field class="editTextFields">
+        <mat-label>ארון</mat-label>
+        <input matInput [(ngModel)]="importAttributes.localStorageCabinet" />
+    </mat-form-field>
+</div>
+<div fxLayout="row">
+    <mat-form-field class="editTextFields">
+        <mat-label>מדף</mat-label>
+        <input matInput [(ngModel)]="importAttributes.localStorageShelf" />
+    </mat-form-field>
+</div>
+<div fxLayout="row">
+    <mat-form-field class="editTextFields">
+        <mat-label>מיכל</mat-label>
+        <input matInput [(ngModel)]="importAttributes.localStorageContainer" />
     </mat-form-field>
 </div>
 <div fxLayout="row">

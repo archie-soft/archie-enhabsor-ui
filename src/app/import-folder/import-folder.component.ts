@@ -32,7 +32,7 @@ export class ImportFolderComponent implements OnInit {
 
   setDefaults(): void {
     this.importAttributes.dcAccessRights = "private";
-    this.importAttributes.textAction = "do-nothing";
+    //this.importAttributes.textAction = "do-nothing";
   }
 
   import(): void {
