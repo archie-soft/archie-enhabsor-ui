@@ -36,13 +36,13 @@
     <div *ngIf="dataSource.length > 0; else nothingFound">
       <div class="sorter-row">
         <mat-form-field>
+          <mat-label>פריטים שנמצאו בחיפוש הנוכחי</mat-label>
+          <input matInput disabled="true" [ngModel]="totalDocumentsFound" />
+        </mat-form-field>
+        <mat-form-field>
           <mat-label>פריט מספר</mat-label>
           <input matInput matTooltip="הקלידו מספר פריט ולחצו על Enter" [(ngModel)]="firstRow"
             (keyup.enter)="jumpToPage()" />
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>פריטים שנמצאו בחיפוש הנוכחי</mat-label>
-          <input matInput disabled="true" [ngModel]="totalDocumentsFound" />
         </mat-form-field>
         <!-- Paginator -->
         <mat-form-field>

@@ -66,10 +66,11 @@ export class SearchResultsComponent implements OnInit {
     this.dcTypes = [
       { value: undefined, viewValue: "הכל" },
       { value: "text", viewValue: "טקסט" },
-      { value: "image", viewValue: "תמונה" },
+      { value: "digital_image", viewValue: "תמונה דיגיטלית" },
+      { value: "scaned_image", viewValue: "תמונה סרוקה" },
       { value: "audio", viewValue: "צליל" },
       { value: "video", viewValue: "סרטון" },
-      { value: "other", viewValue: "אחר" }
+      { value: "artifact", viewValue: "חפץ" }
     ];
   }
 

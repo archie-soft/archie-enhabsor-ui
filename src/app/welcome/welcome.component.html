@@ -8,14 +8,20 @@
                 <span>{{ getDcTypeCount("text") }} </span>
                 <span>מסמכי טקסט</span>
                 <span> | </span>
-                <span> {{ getDcTypeCount("image") }} </span>
-                <span>תמונות</span>
+                <span> {{ getDcTypeCount("scaned_image") }} </span>
+                <span>תמונות סרוקות</span>
+                <span> | </span>
+                <span> {{ getDcTypeCount("digital_image") }} </span>
+                <span>תמונות דיגיטליות</span>
                 <span> | </span>
                 <span> {{ getDcTypeCount("audio") }} </span>
                 <span>קבצי אודיו</span>
                 <span> | </span>
                 <span> {{ getDcTypeCount("video") }} </span>
                 <span>סרטוני וידאו</span>
+                <span> | </span>
+                <span> {{ getDcTypeCount("artifact") }} </span>
+                <span>חפצים</span>
                 <mat-form-field class="searchbox">
                     <input #searchBox matInput placeholder="הקלידו מילה או ביטוי לחיפוש, או כוכבית למציאת כל המסמכים."
                         (keyup.enter)="search(searchBox.value)">

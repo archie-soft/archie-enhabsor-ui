@@ -32,11 +32,12 @@
         <mat-form-field>
             <mat-label>סוג</mat-label>
             <mat-select [(value)]="doc.dcType" matTooltip="סוג המסמך או הפריט">
-                <mat-option value="text">טקסט</mat-option>
-                <mat-option value="image">תמונה</mat-option>
-                <mat-option value="audio">צליל</mat-option>
-                <mat-option value="video">סרט</mat-option>
-                <mat-option value="other">אחר</mat-option>
+                <mat-option value="text">מסמך טקסט</mat-option>
+                <mat-option value="digital_image">תמונה דיגיטלית</mat-option>
+                <mat-option value="scaned_image">תמונה סרוקה</mat-option>
+                <mat-option value="audio">קובץ אודיו</mat-option>
+                <mat-option value="video">קובץ וידאו</mat-option>
+                <mat-option value="artifact">חפץ</mat-option>
             </mat-select>
         </mat-form-field>
     </div>
