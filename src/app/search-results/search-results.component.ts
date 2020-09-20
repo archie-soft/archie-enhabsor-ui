@@ -209,9 +209,9 @@ export class SearchResultsComponent implements OnInit {
     // add sort field
     switch (this.sortField) {
       case "dcTitle":
-        this.searchQuery += "&sort=dcTitleString " + this.sortOrder + ",importTime asc,id asc";
+        this.searchQuery += "&sort=dcTitle " + this.sortOrder + ",importTime asc,id asc";
         break;
-      case "dcDate":
+      case "dcDateStart":
         this.searchQuery += "&sort=dcDateStart " + this.sortOrder + ",importTime asc,id asc";
         break;
       case "importTime":

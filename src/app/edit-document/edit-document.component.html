@@ -95,13 +95,6 @@
         </mat-form-field>
     </div>
     <div>
-        <mat-form-field>
-            <mat-label>מיקום</mat-label>
-            <mat-select [(value)]="doc.localStoragePermanent">
-                <mat-option value=true>קבוע</mat-option>
-                <mat-option value=false>זמני</mat-option>
-            </mat-select>
-        </mat-form-field>
         <mat-checkbox [(ngModel)]="doc.localStoragePermanent">
             מיקום קבוע
         </mat-checkbox>
